@@ -13,6 +13,15 @@
   "author": "Raf Haest",
   "license": "ISC",
   "devDependencies": {
-    "cypress": "^10.7.0"
+    "cypress": "^10.7.0",
+    "eslint": "^8.23.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-n": "^15.2.5",
+    "eslint-plugin-promise": "^6.0.1",
+    "eslint-plugin-react": "^7.31.8"
+  },
+  "dependencies": {
+    "wd": "^1.14.0"
   }
 }

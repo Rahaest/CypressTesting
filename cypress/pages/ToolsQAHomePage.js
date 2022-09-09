@@ -1,13 +1,11 @@
 class ToolsQAHomePage {
+  navigate () {
+    cy.visit('https://demoqa.com/')
+  }
 
-    navigate() {
-        cy.visit('https://demoqa.com/');
-    }
-
-    openForms(){
-        cy.contains('Forms').click()
-    }
-
+  openForms () {
+    cy.contains('Forms').click()
+  }
 }
 
-export default new ToolsQAHomePage();
+export default new ToolsQAHomePage()
