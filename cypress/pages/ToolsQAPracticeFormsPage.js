@@ -1,33 +1,25 @@
 class ToolsQAPracticeFormsPage {
 
-        
-
-    setFirstName(firstName){
-        this.firstName = firstName;
-    }
-
-    setLastName(lastName){
-        this.lastName = lastName;
-    }
-
-    setUserNumber(userNumber){
-        this.userNumber = userNumber;
-    }
-
-    setMale(){
-        cy.contains('Male').click();
-    }    
-    setFemale(){
-        cy.contains('Female').click();
-    }
-    setOther(){
-        cy.contains('Other').click();
+    setGender(gender){
+        if(gender.toLowerCase() == "male") {
+            cy.contains('Male').click(); 
+        }
+        if(gender.toLowerCase() == "female") {
+            cy.contains('Female').click(); 
+        }
+        if(gender.toLowerCase() == "other") {
+            cy.contains('Other').click(); 
+        }
     }
     
-    fillIn(){
-        cy.get('#firstName').type(this.firstName);
-        cy.get('#lastName').type(this.lastName);
-        cy.get('#userNumber').type(this.userNumber);
+    fillIn(firstName, lastName, gender, userNumber){
+        cy.on('uncaught:exception', (err, runnable) => {
+            return false;
+        })
+        cy.get('#firstName').type(firstName);
+        cy.get('#lastName').type(lastName);
+        this.setGender(gender);
+        cy.get('#userNumber').type(userNumber);
     }
 
     submit(){
